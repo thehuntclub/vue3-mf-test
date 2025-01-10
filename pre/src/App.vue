@@ -14,12 +14,10 @@
 
 <template>
   <div class="container">
-    <Header />
-    <Prepare />
-    <!-- <div>Name: pre</div>
-    <div>Framework: vue3</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div> -->
-    <Footer />
+    <v-layout>
+      <Header />
+      <Prepare />
+      <Footer />
+    </v-layout>
   </div>
 </template>

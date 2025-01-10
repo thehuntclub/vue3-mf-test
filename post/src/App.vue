@@ -1,8 +1,23 @@
+<script>
+  import Header from 'host/Header';
+  import Footer from 'host/Footer';
+  import Post from './Post.vue';
+
+  export default {
+    components: {
+      Header,
+      Footer,
+      Post
+    }
+  }
+</script>
+
 <template>
   <div class="container">
-    <div>Name: post</div>
-    <div>Framework: vue3</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+    <v-layout>
+      <Header />
+      <Post />
+      <Footer />
+    </v-layout>
   </div>
 </template>

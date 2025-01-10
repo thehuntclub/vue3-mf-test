@@ -12,11 +12,13 @@ import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loade
 
 import App from "./App.vue";
 import Home from "./Home.vue";
-import Prepare from "prepare/Prepare"
+import Prepare from "prepare/Prepare";
+import Post from "post/Post";
 
 const routes = [
     { path: "/", component: Home },
     { path: "/prepare", component: Prepare },
+    { path: "/post", component: Post }
   ];
 
 const router = VueRouter.createRouter({
@@ -30,8 +32,9 @@ const vuetify = createVuetify({
     icons: {
         defaultSet: 'mdi',
     },
+    theme: {
+      defaultTheme: 'dark'
+    },
 })
 
 createApp(App).use(router).use(vuetify).mount("#app");
-
-// createApp(App).use(vuetify).mount("#app");

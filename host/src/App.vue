@@ -3,7 +3,8 @@
 import Header from "./Header.vue";
 import Home from "./Home.vue";
 import Footer from "./Footer.vue";
-import Prepare from "prepare/Prepare"
+import Prepare from "prepare/Prepare";
+import Post from "post/Post";
 // const Prepare = defineAsyncComponent(() => import("prepare/Prepare"));
 
 export default {
@@ -11,23 +12,23 @@ export default {
     Header,
     Home,
     Footer,
-    Prepare
+    Prepare,
+    Post,
   }  
 }
 </script>
 
 <template>
   <div class="container">
+    <v-layout>
     <Header />
     <!-- <Prepare /> -->
     <!-- <div>
       <router-view></router-view>
     </div> -->
-    <v-layout>
       <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
         <router-view></router-view>
       </v-main>
-    </v-layout>
     <!-- <Home /> -->
     <!-- <div class="text-3xl bg-blue-900 text-white p-5 flex">
       <div class="font-bold mr-5">
@@ -39,5 +40,6 @@ export default {
     <div>Language: JavaScript</div>
     <div>CSS: Empty CSS</div> -->
     <Footer />
+    </v-layout>
   </div>
 </template>

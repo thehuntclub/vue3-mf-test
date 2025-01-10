@@ -70,6 +70,7 @@ module.exports = (_, argv) => ({
       filename: "remoteEntry.js",
       remotes: {
         prepare: "pre@http://localhost:8002/remoteEntry.js",
+        post: "post@http://localhost:8003/remoteEntry.js",
       },
       exposes: {
         './Header': './src/Header.vue',

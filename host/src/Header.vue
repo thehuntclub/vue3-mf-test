@@ -1,5 +1,4 @@
 <template>
-    <v-layout>
     <v-app-bar :elevation="2">
         <template v-slot:prepend>
             <v-app-bar-nav-icon @click="toggleNav"></v-app-bar-nav-icon>
@@ -10,22 +9,28 @@
     <v-navigation-drawer v-if="showNav" class="h-75">
     <!-- <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
     <v-divider></v-divider> -->
-    <v-list-item link title="" @click="redirect('/')">
+    <v-list-item @click="redirect('/')">
+        <RouterLink to="/">Home</RouterLink>
+    </v-list-item>
+    <v-list-item @click="redirect('/prepare')">
+        <RouterLink to="/prepare">Prepare</RouterLink>
+    </v-list-item>
+    <v-list-item @click="redirect('/post')">
+        <RouterLink to="/post">Post</RouterLink>
+    </v-list-item>
+    <!-- <v-list-item link title="" @click="redirect('/')">
         <RouterLink to="/">Home</RouterLink>
     </v-list-item>
     <v-list-item link title="List Item 2" @click="redirect('/prepare')">
         <RouterLink to="/prepare">Prepare</RouterLink>
-    </v-list-item>
-    <v-list-item link title="List Item 3" @click="redirect('/prepare')"></v-list-item>
+    </v-list-item> -->
+    <!-- <v-list-item link title="List Item 3" @click="redirect('/prepare')"></v-list-item> -->
     </v-navigation-drawer>
-    </v-layout>
 </template>
 
 <script>
     import { defineComponent } from 'vue';
-import { useRouter, RouterLink } from 'vue-router';
-
-    
+    import { RouterLink } from 'vue-router';    
 
     export default defineComponent({
         data() {
@@ -38,8 +43,6 @@ import { useRouter, RouterLink } from 'vue-router';
                 this.showNav = !this.showNav
             },
             redirect(path) {
-                // const router = useRouter()
-                // router.push(path)
                 this.showNav = false
             },
         }

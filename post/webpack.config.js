@@ -68,8 +68,13 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "post",
       filename: "remoteEntry.js",
-      remotes: {},
-      exposes: {},
+      remotes: {
+        host: "host@http://localhost:8001/remoteEntry.js",
+        prepare: "pre@http://localhost:8002/remoteEntry.js",
+      },
+      exposes: {
+        './Post': './src/Post.vue',
+      },
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
